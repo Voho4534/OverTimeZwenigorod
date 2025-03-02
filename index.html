@@ -61,7 +61,7 @@
 
         /* Hero-секция с изображением */
         .hero {
-            height: 1080px; /* Высота hero-секции */
+            height: 500px; /* Высота hero-секции */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -111,6 +111,12 @@
             header nav {
                 margin-top: 10px;
                 gap: 10px;
+                flex-wrap: wrap; /* Перенос пунктов меню на новую строку */
+                justify-content: center;
+            }
+
+            .hero {
+                height: 300px; /* Уменьшенная высота для мобильных устройств */
             }
 
             .hero h1 {
@@ -135,6 +141,7 @@
             <a href="index.html">Главная</a>
             <a href="news.html">Новости</a>
             <a href="teams.html">Команды</a>
+            <a href="table.html">Таблица</a> <!-- Новый пункт меню -->
         </nav>
     </header>
 
