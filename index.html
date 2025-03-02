@@ -161,7 +161,6 @@
         }
 
         .news-item {
-            position: relative;
             background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
@@ -169,21 +168,23 @@
             margin-top: 60px; /* Отступ для фотки */
             width: calc(50% - 10px); /* Две новости в строке */
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрирование содержимого */
         }
 
         .news-item img {
-            position: absolute;
-            top: -30px; /* Фотка выходит за рамку */
-            left: 20px;
             width: 100%; /* Фотка в длину */
             height: 150px; /* Высота фотки */
             border-radius: 10px; /* Скругленные края фотки */
             border: 2px solid white; /* Белая рамка вокруг фотки */
             object-fit: cover; /* Фотка растягивается по размеру */
+            margin-top: -40px; /* Смещение фотки вверх */
+            margin-bottom: 20px; /* Отступ между фоткой и текстом */
         }
 
         .news-item .text {
-            margin-top: 130px; /* Отступ для текста, чтобы не перекрывался фоткой */
+            text-align: center; /* Центрирование текста */
         }
 
         .news-item h3 {
@@ -279,11 +280,11 @@
 
             .news-item img {
                 height: 120px; /* Уменьшенная высота фотки на мобильных устройствах */
-                top: -20px; /* Меньший выступ фотки на мобильных устройствах */
+                margin-top: -30px; /* Меньшее смещение фотки вверх на мобильных устройствах */
             }
 
             .news-item .text {
-                margin-top: 100px; /* Уменьшенный отступ для текста на мобильных устройствах */
+                margin-top: 0; /* Убрали отступ для текста, так как фотка теперь в потоке */
             }
         }
     </style>
