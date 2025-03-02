@@ -161,23 +161,26 @@
         }
 
         .news-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+            position: relative;
             background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 60px; /* Отступ для фотки */
         }
 
         .news-item img {
+            position: absolute;
+            top: -30px; /* Фотка выходит за рамку */
+            left: 20px;
             width: 100px;
             height: 100px;
             border-radius: 10px; /* Скругленные края фотки */
+            border: 2px solid white; /* Белая рамка вокруг фотки */
         }
 
         .news-item .text {
-            flex: 1;
+            margin-top: 80px; /* Отступ для текста, чтобы не перекрывался фоткой */
         }
 
         .news-item h3 {
@@ -257,13 +260,17 @@
             }
 
             .news-item {
-                flex-direction: column; /* Вертикальное выравнивание на мобильных устройствах */
-                text-align: center;
+                margin-top: 50px; /* Уменьшенный отступ для фотки на мобильных устройствах */
             }
 
             .news-item img {
                 width: 80px;
                 height: 80px;
+                top: -20px; /* Меньший выступ фотки на мобильных устройствах */
+            }
+
+            .news-item .text {
+                margin-top: 60px; /* Уменьшенный отступ для текста на мобильных устройствах */
             }
         }
     </style>
@@ -275,8 +282,7 @@
         <nav>
             <a href="index.html">Главная</a>
             <a href="teams.html">Команды</a>
-            <a href="table.html">Таблица</a>
-            <a href="Schedule.html">Расписание</a><!-- Новый пункт меню -->
+            <a href="table.html">Таблица</a> <!-- Новый пункт меню -->
         </nav>
     </header>
 
