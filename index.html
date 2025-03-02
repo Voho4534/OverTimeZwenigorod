@@ -9,141 +9,78 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-        .block {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 20px 0;
-        }
-        .block-1 {
             background-image: url('background.jpg'); /* Замените на ваше изображение */
             background-size: cover;
             background-position: center;
-            height: 300px;
+            background-attachment: fixed;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
             color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            background-image: url('hero.jpg'); /* Замените на ваше изображение */
+            background-size: cover;
+            background-position: center;
+        }
+        .hero h1 {
             font-size: 48px;
             font-weight: bold;
         }
-        .block-2, .block-3, .block-4, .block-5, .block-6 {
-            background-color: white;
-            color: black;
-        }
-        .block-2 {
-            height: auto;
-        }
-        .block-3, .block-5 {
-            height: 100px;
-            font-size: 36px;
-            font-weight: bold;
-        }
-        .block-4 {
-            height: auto;
+        .content {
             padding: 20px;
-        }
-        .block-6 {
-            height: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .news-item {
-            width: 30%;
-            margin: 10px;
-            text-align: center;
-        }
-        .news-item img {
-            width: 100%;
-            border: 2px solid black;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        a {
-            color: black;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-top: 60px; /* Отступ для фиксированного header */
         }
     </style>
 </head>
 <body>
-    <div class="block block-1">
-        OVER TIME ZWENIGOROD
+    <header>
+        <div class="logo">OVER TIME ZWENIGOROD</div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="news.html">Новости</a>
+            <a href="teams.html">Команды</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Добро пожаловать на наш сайт</h1>
     </div>
 
-    <div class="block block-2">
-        <h2>Результаты ближайшей игры</h2>
-        <!-- Вставьте сюда данные из изображения 1 -->
-    </div>
-
-    <div class="block block-3">
-        Турнирная таблица
-    </div>
-
-    <div class="block block-4">
-        <table>
-            <tr>
-                <th>Место</th>
-                <th>Команда</th>
-                <th>И</th>
-                <th>В</th>
-                <th>П</th>
-                <th>%</th>
-                <th>Последние 5 игр</th>
-                <th>Забито</th>
-                <th>Пропущено</th>
-                <th>+/-</th>
-                <th>Очки</th>
-            </tr>
-            <!-- Вставьте сюда данные из изображения 2 -->
-            <tr>
-                <td>1</td>
-                <td><a href="team1.html">УОР № 3 Ю_2008 Московская область</a></td>
-                <td>5</td>
-                <td>5</td>
-                <td>0</td>
-                <td>100</td>
-                <td>......</td>
-                <td>415</td>
-                <td>269</td>
-                <td>146</td>
-                <td>10</td>
-            </tr>
-            <!-- Добавьте остальные строки таблицы -->
-        </table>
-    </div>
-
-    <div class="block block-5">
-        Новости
-    </div>
-
-    <div class="block block-6">
-        <div class="news-item">
-            <img src="news1.jpg" alt="Новость 1">
-            <h3>Заголовок новости 1</h3>
-            <p>Краткое описание новости 1.</p>
-        </div>
-        <div class="news-item">
-            <img src="news2.jpg" alt="Новость 2">
-            <h3>Заголовок новости 2</h3>
-            <p>Краткое описание новости 2.</p>
-        </div>
-        <!-- Добавьте больше новостей по аналогии -->
+    <div class="content">
+        <h2>О нас</h2>
+        <p>Здесь вы можете разместить информацию о вашем клубе или команде.</p>
     </div>
 </body>
 </html>
