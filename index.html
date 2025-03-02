@@ -21,7 +21,7 @@
             width: 100%;
             background-color: rgba(0, 0, 0, 1); /* Черный фон */
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Центрирование всего содержимого */
             align-items: center;
             padding: 10px 20px;
             z-index: 1000;
@@ -35,6 +35,8 @@
 
         /* Логотип в левом углу */
         header .logo {
+            position: absolute; /* Логотип позиционируется абсолютно */
+            left: 20px; /* Отступ слева */
             font-size: 24px;
             font-weight: bold;
             color: white;
@@ -59,7 +61,7 @@
 
         /* Hero-секция с изображением */
         .hero {
-            height: 1000px; /* Высота hero-секции */
+            height: 1080px; /* Высота hero-секции */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -97,8 +99,13 @@
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 padding: 10px;
+            }
+
+            header .logo {
+                position: static; /* Логотип возвращается в поток */
+                margin-bottom: 10px;
             }
 
             header nav {
@@ -133,7 +140,7 @@
 
     <!-- Hero-секция с изображением -->
     <div class="hero">
-        <h1>       </h1>
+        <h1>      </h1>
     </div>
 
     <!-- Основной контент -->
