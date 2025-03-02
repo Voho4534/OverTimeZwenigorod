@@ -155,7 +155,7 @@
         /* Блок с новостями */
         .news {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap; /* Новости в одну строку */
             gap: 20px;
             margin-top: 40px;
         }
@@ -167,20 +167,23 @@
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             margin-top: 60px; /* Отступ для фотки */
+            width: calc(50% - 10px); /* Две новости в строке */
+            box-sizing: border-box;
         }
 
         .news-item img {
             position: absolute;
             top: -30px; /* Фотка выходит за рамку */
             left: 20px;
-            width: 100px;
-            height: 100px;
+            width: 100%; /* Фотка в длину */
+            height: 150px; /* Высота фотки */
             border-radius: 10px; /* Скругленные края фотки */
             border: 2px solid white; /* Белая рамка вокруг фотки */
+            object-fit: cover; /* Фотка растягивается по размеру */
         }
 
         .news-item .text {
-            margin-top: 80px; /* Отступ для текста, чтобы не перекрывался фоткой */
+            margin-top: 130px; /* Отступ для текста, чтобы не перекрывался фоткой */
         }
 
         .news-item h3 {
@@ -270,17 +273,17 @@
             }
 
             .news-item {
+                width: 100%; /* На мобильных устройствах одна новость в строке */
                 margin-top: 50px; /* Уменьшенный отступ для фотки на мобильных устройствах */
             }
 
             .news-item img {
-                width: 80px;
-                height: 80px;
+                height: 120px; /* Уменьшенная высота фотки на мобильных устройствах */
                 top: -20px; /* Меньший выступ фотки на мобильных устройствах */
             }
 
             .news-item .text {
-                margin-top: 60px; /* Уменьшенный отступ для текста на мобильных устройствах */
+                margin-top: 100px; /* Уменьшенный отступ для текста на мобильных устройствах */
             }
         }
     </style>
@@ -345,6 +348,14 @@
                 <div class="text">
                     <h3>Победа в важном матче</h3>
                     <p>Наша команда одержала важную победу в матче против принципиального соперника...</p>
+                    <a href="#">Читать далее</a>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="img/news2.png" alt="Новость 2">
+                <div class="text">
+                    <h3>Срочные новости!!!</h3>
+                    <p>Богдан покинул чат.</p>
                     <a href="#">Читать далее</a>
                 </div>
             </div>
