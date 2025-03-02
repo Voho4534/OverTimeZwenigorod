@@ -187,21 +187,31 @@
                 font-size: 16px;
             }
 
+            .match-result, .match-result2 {
+                flex-direction: column; /* Вертикальное выравнивание на мобильных устройствах */
+                align-items: center;
+                text-align: center;
+            }
+
             .match-result img, .match-result2 img {
                 width: 40px;
                 height: 40px;
+                margin-bottom: 10px; /* Отступ между изображением и названием команды */
             }
 
             .match-result .score, .match-result2 .score {
                 font-size: 20px;
+                margin: 10px 0; /* Отступы для счета */
             }
 
             .match-result .date, .match-result2 .date {
                 font-size: 16px;
+                margin-top: 10px; /* Отступ для даты */
             }
 
             .team-name {
                 font-size: 14px;
+                margin-bottom: 5px; /* Уменьшенный отступ для названия команды */
             }
         }
     </style>
