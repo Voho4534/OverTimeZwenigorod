@@ -12,6 +12,9 @@
             padding: 0;
             background-color: #2a2a2a; /* Темно-серый фон */
             color: white; /* Белый текст для контраста */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Минимальная высота страницы */
         }
 
         /* Фиксированное меню */
@@ -83,6 +86,7 @@
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto; /* Центрирование контента */
+            flex: 1; /* Растягиваем контент на всю доступную высоту */
         }
 
         .content h2 {
@@ -204,6 +208,24 @@
         }
 
         .news-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Футер */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+            padding: 20px;
+            text-align: center;
+            margin-top: auto; /* Прижимаем футер к низу */
+        }
+
+        footer a {
+            color: #007BFF; /* Синий цвет для ссылки */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
             text-decoration: underline;
         }
 
@@ -364,6 +386,11 @@
     <!-- Добавьте больше новостей по аналогии -->
 </div>
     
+    <!-- Футер с контактной информацией -->
+    <footer>
+        <p>Подпишитесь на наш Telegram-канал: <a href="https://t.me/your_channel_link" target="_blank">Over Time Zvenigorod</a></p>
+    </footer>
+
     <!-- Скрипт для изменения прозрачности меню при скролле -->
     <script>
         window.addEventListener('scroll', function() {
