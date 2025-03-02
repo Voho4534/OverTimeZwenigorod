@@ -88,6 +88,8 @@
         .content h2 {
             font-size: 28px;
             margin-bottom: 20px;
+            padding-top: 20px;
+            border-top: 1px solid black; /* Черная линия между hero и заголовком "События" */
         }
 
         .content p {
@@ -137,17 +139,17 @@
             margin-top: 10px;
         }
 
-        /* Названия команд */
-        .team-name {
+        /* Названия команд над логотипами */
+        .team-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-logo .team-name {
             font-size: 16px;
             text-align: center;
             margin-bottom: 10px;
-        }
-
-        /* Черная линия между блоками */
-        .match-results .match-result + .match-result2 {
-            border-top: 1px solid black;
-            padding-top: 20px;
         }
 
         /* Адаптация для мобильных устройств */
@@ -211,7 +213,7 @@
                 margin-top: 10px; /* Отступ для даты */
             }
 
-            .team-name {
+            .team-logo .team-name {
                 font-size: 14px;
                 margin-bottom: 5px; /* Уменьшенный отступ для названия команды */
             }
@@ -240,20 +242,30 @@
         <!-- Блок с результатами матчей -->
         <div class="match-results">
             <div class="match-result">
-                <div class="team-name">Paw Patrol</div>
                 <div class="teams">
-                    <img src="img/PPATROL2.png" alt="Paw patrol">
+                    <div class="team-logo">
+                        <div class="team-name">Paw Patrol</div>
+                        <img src="img/PPATROL2.png" alt="Paw patrol">
+                    </div>
                     <div class="score">Не начался</div>
-                    <img src="img/RWE2.png" alt="RWE">
+                    <div class="team-logo">
+                        <div class="team-name">RWE</div>
+                        <img src="img/RWE2.png" alt="RWE">
+                    </div>
                 </div>
                 <div class="date">10 июня 16:00</div>
             </div>
             <div class="match-result2">
-                <div class="team-name">Bulldogs</div>
                 <div class="teams">
-                    <img src="img/BULLDOGS2.png" alt="BULLDOGS">
+                    <div class="team-logo">
+                        <div class="team-name">Bulldogs</div>
+                        <img src="img/BULLDOGS2.png" alt="BULLDOGS">
+                    </div>
                     <div class="score">Не начался</div>
-                    <img src="img/KITTY BOYS2.png" alt="KITTY BOYS">
+                    <div class="team-logo">
+                        <div class="team-name">Kitty Boys</div>
+                        <img src="img/KITTY BOYS2.png" alt="KITTY BOYS">
+                    </div>
                 </div>
                 <div class="date">10 июня 18:00</div>
             </div>
