@@ -6,15 +6,19 @@
     <title>Over Time Zvenigorod</title>
     <style>
         /* Общие стили */
+        html {
+            overflow-x: hidden;
+        }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #2a2a2a; /* Темно-серый фон */
-            color: white; /* Белый текст для контраста */
+            background-color: #2a2a2a;
+            color: white;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Минимальная высота страницы */
+            min-height: 100vh;
         }
 
         /* Фиксированное меню */
@@ -22,30 +26,27 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 1); /* Черный фон */
+            background-color: rgba(0, 0, 0, 1);
             display: flex;
-            justify-content: center; /* Центрирование всего содержимого */
+            justify-content: center;
             align-items: center;
             padding: 10px 20px;
             z-index: 1000;
-            transition: background-color 0.3s ease; /* Плавное изменение фона */
+            transition: background-color 0.3s ease;
         }
 
-        /* Прозрачное меню при скролле */
         header.scrolled {
-            background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
-        /* Логотип в левом углу */
         header .logo {
-            position: absolute; /* Логотип позиционируется абсолютно */
-            left: 20px; /* Отступ слева */
+            position: absolute;
+            left: 20px;
             font-size: 24px;
             font-weight: bold;
             color: white;
         }
 
-        /* Навигация по центру */
         header nav {
             display: flex;
             gap: 20px;
@@ -55,53 +56,42 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s ease; /* Плавное изменение цвета */
+            transition: color 0.3s ease;
         }
 
         header nav a:hover {
-            color: #ccc; /* Светло-серый при наведении */
+            color: #ccc;
         }
 
-        /* Hero-секция с изображением */
+        /* Hero-секция */
         .hero {
-            height: 540px; /* Высота hero-секции */
+            height: 540px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('img/OTZ.png'); /* Изображение hero */
+            background-image: url('img/OTZ.png');
             background-size: cover;
             background-position: center;
-            margin-top: 60px; /* Отступ для фиксированного меню */
-        }
-
-        .hero h1 {
-            font-size: 36px;
-            font-weight: bold;
-            color: white;
-            text-align: center;
+            margin-top: 60px;
         }
 
         /* Основной контент */
         .content {
             padding: 20px;
             max-width: 1200px;
-            margin: 0 auto; /* Центрирование контента */
-            flex: 1; /* Растягиваем контент на всю доступную высоту */
+            margin: 0 auto;
+            flex: 1;
+            box-sizing: border-box;
         }
 
         .content h2 {
             font-size: 28px;
             margin-bottom: 20px;
             padding-top: 20px;
-            border-top: 1px solid black; /* Черная линия между hero и заголовком "События" */
+            border-top: 1px solid black;
         }
 
-        .content p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        /* Блок с результатами матчей */
+        /* Блок с матчами */
         .match-results {
             display: flex;
             flex-direction: column;
@@ -109,57 +99,48 @@
             margin-top: 40px;
         }
 
-        .match-result, .match-result2 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .match-result {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .match-result .teams, .match-result2 .teams {
+        .teams {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
         }
 
-        .match-result img, .match-result2 img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .match-result .score, .match-result2 .score {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 20px;
-        }
-
-        .match-result .date, .match-result2 .date {
-            font-size: 18px;
-            color: #ccc;
-            margin-top: 10px;
-        }
-
-        /* Названия команд над логотипами */
         .team-logo {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .team-logo .team-name {
-            font-size: 16px;
-            text-align: center;
-            margin-bottom: 10px;
+        .team-logo img {
+            width: 50px;
+            height: 50px;
         }
 
-        /* Блок с новостями */
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 20px;
+        }
+
+        .date {
+            font-size: 18px;
+            color: #ccc;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Новости */
         .news {
             display: flex;
-            flex-wrap: wrap; /* Новости в одну строку */
+            flex-wrap: wrap;
             gap: 20px;
             margin-top: 40px;
         }
@@ -169,169 +150,76 @@
             padding: 20px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: 60px; /* Отступ для фотки */
-            width: calc(50% - 10px); /* Две новости в строке */
+            width: calc(50% - 10px);
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Центрирование содержимого */
+            position: relative;
         }
 
         .news-item img {
-            width: 100%; /* Фотка в длину */
-            height: 200px; /* Увеличиваем высоту фотки */
-            border-radius: 10px; /* Скругленные края фотки */
-            border: 2px solid white; /* Белая рамка вокруг фотки */
-            object-fit: cover; /* Фотка растягивается по размеру */
-            margin-top: -40px; /* Смещение фотки вверх */
-            margin-bottom: 20px; /* Отступ между фоткой и текстом */
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            border: 2px solid white;
+            object-fit: cover;
+            margin-top: -40px;
+            margin-bottom: 20px;
         }
 
-        .news-item .text {
-            text-align: center; /* Центрирование текста */
-        }
-
-        .news-item h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .news-item p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .news-item a {
-            color: #ccc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .news-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Футер (подвал сайта) */
+        /* Футер */
         footer {
-            background-color: black; /* Черный фон */
-            padding: 40px 20px; /* Увеличенный отступ сверху и снизу */
-            text-align: center;
-            margin-top: 60px; /* Отступ от контента */
-            width: 100%; /* Во всю ширину */
+            background-color: #000;
+            padding: 40px 20px;
+            margin-top: 60px;
+            width: 100vw;
+            box-sizing: border-box;
         }
 
-        footer .footer-content {
+        .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px; /* Отступ между элементами */
+            gap: 20px;
         }
 
-        footer .social-links {
+        .social-links {
             display: flex;
             gap: 20px;
         }
 
-        footer .social-links a {
+        .social-links a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
             transition: color 0.3s ease;
         }
 
-        footer .social-links a:hover {
+        .social-links a:hover {
             color: #007BFF;
         }
 
-        footer p {
-            font-size: 14px;
-            color: #ccc;
-            margin: 0;
-        }
-
-        /* Адаптация для мобильных устройств */
+        /* Адаптация */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                align-items: center;
                 padding: 10px;
             }
 
             header .logo {
-                position: static; /* Логотип возвращается в поток */
+                position: static;
                 margin-bottom: 10px;
             }
 
-            header nav {
-                margin-top: 10px;
-                gap: 10px;
-                flex-wrap: wrap; /* Перенос пунктов меню на новую строку */
-                justify-content: center;
-            }
-
             .hero {
-                height: 300px; /* Уменьшенная высота для мобильных устройств */
-                background-size: contain; /* Сужаем изображение по бокам */
-                background-repeat: no-repeat;
-                background-position: center;
-            }
-
-            .hero h1 {
-                font-size: 24px;
-            }
-
-            .content h2 {
-                font-size: 24px;
-            }
-
-            .content p {
-                font-size: 16px;
-            }
-
-            .match-result, .match-result2 {
-                flex-direction: column; /* Вертикальное выравнивание на мобильных устройствах */
-                align-items: center;
-                text-align: center;
-            }
-
-            .match-result img, .match-result2 img {
-                width: 40px;
-                height: 40px;
-                margin-bottom: 10px; /* Отступ между изображением и названием команды */
-            }
-
-            .match-result .score, .match-result2 .score {
-                font-size: 20px;
-                margin: 10px 0; /* Отступы для счета */
-            }
-
-            .match-result .date, .match-result2 .date {
-                font-size: 16px;
-                margin-top: 10px; /* Отступ для даты */
-            }
-
-            .team-logo .team-name {
-                font-size: 14px;
-                margin-bottom: 5px; /* Уменьшенный отступ для названия команды */
+                height: 300px;
+                background-size: contain;
             }
 
             .news-item {
-                width: 100%; /* На мобильных устройствах одна новость в строке */
-                margin-top: 50px; /* Уменьшенный отступ для фотки на мобильных устройствах */
+                width: 100%;
             }
 
-            .news-item img {
-                height: 150px; /* Уменьшенная высота фотки на мобильных устройствах */
-                margin-top: -30px; /* Меньшее смещение фотки вверх на мобильных устройствах */
-            }
-
-            .news-item .text {
-                margin-top: 0; /* Убрали отступ для текста, так как фотка теперь в потоке */
-            }
-
-            footer .social-links {
+            .social-links {
                 flex-direction: column;
                 gap: 10px;
             }
@@ -339,7 +227,6 @@
     </style>
 </head>
 <body>
-    <!-- Фиксированное меню -->
     <header id="header">
         <div class="logo">OVER TIME ZWENIGOROD</div>
         <nav>
@@ -350,15 +237,12 @@
         </nav>
     </header>
 
-    <!-- Hero-секция с изображением -->
     <div class="hero">
-        <h1>      </h1>
+        <h1></h1>
     </div>
 
-    <!-- Основной контент -->
     <div class="content">
         <h2>События</h2>
-        <!-- Блок с результатами матчей -->
         <div class="match-results">
             <div class="match-result">
                 <div class="teams">
@@ -374,24 +258,8 @@
                 </div>
                 <div class="date">10 июня 16:00</div>
             </div>
-            <div class="match-result2">
-                <div class="teams">
-                    <div class="team-logo">
-                        <div class="team-name">Bulldogs</div>
-                        <img src="img/BULLDOGS2.png" alt="BULLDOGS">
-                    </div>
-                    <div class="score">Не начался</div>
-                    <div class="team-logo">
-                        <div class="team-name">Kitty Boys</div>
-                        <img src="img/KITTY BOYS2.png" alt="KITTY BOYS">
-                    </div>
-                </div>
-                <div class="date">10 июня 18:00</div>
-            </div>
-            <!-- Добавьте больше матчей по аналогии -->
         </div>
 
-        <!-- Блок с новостями -->
         <h2>Новости</h2>
         <div class="news">
             <div class="news-item">
@@ -402,36 +270,24 @@
                     <a href="news.html" style="color: #007BFF; font-weight: bold;">Читать далее</a>
                 </div>
             </div>
-            <!--<div class="news-item">
-                <img src="img/news2.png" alt="Новость 2">
-                    <div class="text">
-                        <h3>Срочные новости!!!</h3>
-                        <p>Богдан покинул чат.</p>
-                        <a href="news.html" style="color: #007BFF; font-weight: bold;">Читать далее</a>
-                    </div>
-            </div>-->
-    <!-- Добавьте больше новостей по аналогии -->
-</div>
-    
-    <!-- Футер (подвал сайта) -->
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <div class="social-links">
                 <a href="https://t.me/your_channel_link" target="_blank">Telegram</a>
+                <a href="https://vk.com/your_group_link" target="_blank">VK</a>
+                <a href="https://instagram.com/your_profile_link" target="_blank">Instagram</a>
             </div>
             <p>© 2023 Over Time Zvenigorod. Все права защищены.</p>
         </div>
     </footer>
 
-    <!-- Скрипт для изменения прозрачности меню при скролле -->
     <script>
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
     </script>
 </body>
