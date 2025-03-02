@@ -5,82 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Over Time Zvenigorod</title>
     <style>
+        /* Общие стили */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('img/background.png'); /* Замените на ваше изображение */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-color: #2a2a2a; /* Темно-серый фон */
+            color: white; /* Белый текст для контраста */
         }
+
+        /* Фиксированное меню */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
+            background-color: rgba(0, 0, 0, 1); /* Черный фон */
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             z-index: 1000;
+            transition: background-color 0.3s ease; /* Плавное изменение фона */
         }
+
+        /* Прозрачное меню при скролле */
+        header.scrolled {
+            background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+        }
+
+        /* Логотип в левом углу */
         header .logo {
             font-size: 24px;
             font-weight: bold;
+            color: white;
         }
+
+        /* Навигация по центру */
         header nav {
             display: flex;
             gap: 20px;
         }
+
         header nav a {
             color: white;
             text-decoration: none;
             font-size: 18px;
+            transition: color 0.3s ease; /* Плавное изменение цвета */
         }
+
         header nav a:hover {
-            text-decoration: underline;
+            color: #ccc; /* Светло-серый при наведении */
         }
+
+        /* Hero-секция с изображением */
         .hero {
-            height: 100vh;
+            height: 300px; /* Высота hero-секции */
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            text-align: center;
-            background-image: url('img/news1.png'); /* Замените на ваше изображение */
+            background-image: url('hero.png'); /* Изображение hero */
             background-size: cover;
             background-position: center;
+            margin-top: 60px; /* Отступ для фиксированного меню */
         }
+
         .hero h1 {
-            font-size: 48px;
+            font-size: 36px;
             font-weight: bold;
+            color: white;
+            text-align: center;
         }
+
+        /* Основной контент */
         .content {
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            margin-top: 100px; /* Отступ для фиксированного header */
+            max-width: 1200px;
+            margin: 0 auto; /* Центрирование контента */
+        }
+
+        .content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            header nav {
+                margin-top: 10px;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .content h2 {
+                font-size: 24px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Фиксированное меню -->
+    <header id="header">
         <div class="logo">OVER TIME ZWENIGOROD</div>
         <nav>
             <a href="index.html">Главная</a>
             <a href="news.html">Новости</a>
             <a href="teams.html">Команды</a>
         </nav>
-        
     </header>
+
+    <!-- Hero-секция с изображением -->
     <div class="hero">
-        <h1>     </h1>
+        <h1>Добро пожаловать на наш сайт</h1>
     </div>
-    
+
+    <!-- Основной контент -->
     <div class="content">
         <h2>О нас</h2>
-        <p>Здесь вы можете разместить информацию о вашем клубе или команде.</p>
+        <p>Здесь вы можете разместить информацию о вашем клубе или команде. Например, описание достижений, истории или предстоящих событий.</p>
     </div>
+
+    <!-- Скрипт для изменения прозрачности меню при скролле -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
