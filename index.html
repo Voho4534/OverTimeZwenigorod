@@ -6,10 +6,6 @@
     <title>Over Time Zvenigorod</title>
     <style>
         /* Общие стили */
-        html {
-            overflow-x: hidden;
-        }
-        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -214,7 +210,6 @@
             .hero {
                 height: 300px;
                 background-size: contain;
-                background-repeat: no-repeat;
             }
 
             .news-item {
@@ -236,7 +231,6 @@
             <a href="news.html">Новости</a>
             <a href="schedule.html">Расписание</a>
             <a href="teams.html">Команды</a>
-            <a href="table.html">Соревнования</a>
         </nav>
     </header>
 
@@ -247,6 +241,7 @@
     <div class="content">
         <h2>События</h2>
         <div class="match-results">
+            <!-- Первый матч -->
             <div class="match-result">
                 <div class="teams">
                     <div class="team-logo">
@@ -260,6 +255,22 @@
                     </div>
                 </div>
                 <div class="date">10 июня 16:00</div>
+            </div>
+
+            <!-- Второй матч -->
+            <div class="match-result">
+                <div class="teams">
+                    <div class="team-logo">
+                        <div class="team-name">Bulldogs</div>
+                        <img src="img/BULLDOGS2.png" alt="BULLDOGS">
+                    </div>
+                    <div class="score">Не начался</div>
+                    <div class="team-logo">
+                        <div class="team-name">Kitty Boys</div>
+                        <img src="img/KITTY BOYS2.png" alt="KITTY BOYS">
+                    </div>
+                </div>
+                <div class="date">10 июня 18:00</div>
             </div>
         </div>
 
@@ -279,14 +290,17 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="https://t.me/pisunapidora" target="_blank">Telegram</a>
+                <a href="https://t.me/your_channel_link" target="_blank">Telegram</a>
+                <a href="https://vk.com/your_group" target="_blank">VK</a>
+                <a href="https://instagram.com/your_profile" target="_blank">Instagram</a>
             </div>
             <p>© 2023 Over Time Zvenigorod. Все права защищены.</p>
+            <p>Контакты: example@email.com</p>
         </div>
     </footer>
 
     <script>
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
         });
