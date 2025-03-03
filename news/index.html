@@ -46,6 +46,9 @@
         header nav {
             display: flex;
             gap: 20px;
+            justify-content: center; /* Центрирование по горизонтали */
+            align-items: center; /* Центрирование по вертикали */
+            margin: 0 auto; /* Центрирование навигации */
         }
 
         header nav a {
@@ -53,6 +56,7 @@
             text-decoration: none;
             font-size: 18px;
             transition: color 0.3s ease;
+            white-space: nowrap; /* Запрет переноса текста */
         }
 
         header nav a:hover {
@@ -146,6 +150,13 @@
             header .logo {
                 position: static;
                 margin-bottom: 10px;
+                text-align: center; /* Центрирование логотипа */
+            }
+
+            header nav {
+                flex-direction: row; /* Горизонтальное расположение пунктов меню */
+                gap: 10px;
+                align-items: center; /* Центрирование пунктов меню */
             }
 
             .content {
@@ -176,6 +187,14 @@
         }
 
         @media (max-width: 480px) {
+            header nav {
+                gap: 8px; /* Уменьшение отступов между пунктами меню */
+            }
+
+            header nav a {
+                font-size: 14px; /* Уменьшение размера шрифта для мобильных */
+            }
+
             .content {
                 padding-top: 100px;
                 padding: 20px;
