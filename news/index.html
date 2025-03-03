@@ -71,14 +71,17 @@
             padding-top: 100px;
             flex: 1;
             box-sizing: border-box;
+            text-align: center; /* Центрирование содержимого по горизонтали */
         }
 
         .content h2 {
             font-size: 40px;
             margin: 0 auto 40px;
-            text-align: center;
-            max-width: 90%;
             line-height: 1.2;
+            display: inline-block; /* Чтобы прямоугольник был по ширине текста */
+            padding: 20px 40px; /* Отступы для текста */
+            background-color: #dd4710; /* Цвет прямоугольника */
+            border-radius: 5px; /* Закругленные углы */
         }
 
         /* Блок с новостями */
@@ -99,6 +102,7 @@
             max-width: 800px;
             box-sizing: border-box;
             margin-top: 60px;
+            text-align: center; /* Центрирование текста внутри блока новости */
         }
 
         .news-item img {
@@ -113,6 +117,12 @@
 
         .news-item .text {
             padding: 0 20px;
+            text-align: center; /* Центрирование текста внутри блока новости */
+        }
+
+        .news-item h3 {
+            text-align: center; /* Центрирование заголовка */
+            margin-bottom: 20px; /* Отступ снизу для заголовка */
         }
 
         .news-item p {
@@ -167,7 +177,7 @@
             .content h2 {
                 font-size: 32px;
                 margin-bottom: 30px;
-                max-width: 100%;
+                padding: 15px 30px; /* Уменьшенные отступы для мобильных */
             }
 
             .news-item {
@@ -202,6 +212,8 @@
             
             .content h2 {
                 font-size: 28px;
+                margin-top: 20px; /* Сдвигаем надпись "Новости" вниз */
+                padding: 10px 20px; /* Уменьшенные отступы для мобильных */
             }
             
             .news-item {
