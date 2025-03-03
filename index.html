@@ -24,7 +24,7 @@
             width: 100%;
             background-color: rgba(0, 0, 0, 1);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 10px 20px;
             z-index: 1000;
@@ -36,31 +36,16 @@
         }
 
         header .logo {
+            position: absolute;
+            left: 20px;
             font-size: 24px;
             font-weight: bold;
             color: white;
         }
 
-        /* Бургер-меню */
-        .burger-menu {
-            display: none; /* Скрыто по умолчанию */
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .burger-menu span {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        /* Навигация */
         header nav {
             display: flex;
             gap: 20px;
-            align-items: center;
         }
 
         header nav a {
@@ -72,28 +57,6 @@
 
         header nav a:hover {
             color: #ccc;
-        }
-
-        /* Адаптация для мобильных устройств */
-        @media (max-width: 768px) {
-            .burger-menu {
-                display: flex; /* Показываем бургер-меню */
-            }
-
-            header nav {
-                display: none; /* Скрываем навигацию по умолчанию */
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                background-color: rgba(0, 0, 0, 0.9);
-                padding: 10px;
-                border-radius: 5px;
-            }
-
-            header nav.active {
-                display: flex; /* Показываем навигацию при активации */
-            }
         }
 
         /* Hero-секция */
@@ -280,17 +243,39 @@
             width: 24px;
             height: 24px;
         }
+
+        /* Адаптация */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            header .logo {
+                position: static;
+                margin-bottom: 10px;
+            }
+
+            .hero {
+                height: 300px;
+                background-size: contain;
+            }
+
+            .news-item {
+                width: 100%;
+            }
+
+            .social-links {
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <header id="header">
         <div class="logo">OVER TIME ZWENIGOROD</div>
-        <div class="burger-menu" id="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav id="nav">
+        <nav>
             <a href="/OverTimeZwenigorod/">Главная</a>
             <a href="/OverTimeZwenigorod/news">Новости</a>
             <a href="/OverTimeZwenigorod/table">Соревнования</a>
@@ -380,15 +365,6 @@
     </footer>
 
     <script>
-        // Скрипт для бургер-меню
-        const burgerMenu = document.getElementById('burger-menu');
-        const nav = document.getElementById('nav');
-
-        burgerMenu.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-
-        // Скрипт для фиксированного меню
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
