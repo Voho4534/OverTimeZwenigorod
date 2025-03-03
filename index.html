@@ -142,6 +142,8 @@
             font-size: 24px;
             font-weight: bold;
             margin: 0 20px;
+            flex: 1; /* Растягиваем блок, чтобы текст был по центру */
+            text-align: center; /* Выравнивание текста по центру */
         }
 
         .date {
@@ -155,7 +157,7 @@
         .news {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 40px; /* Увеличенный отступ между новостями */
             margin-top: 40px;
             justify-content: center; /* Выравнивание новостей по центру */
         }
@@ -165,7 +167,7 @@
             padding: 20px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            width: calc(50% - 10px);
+            width: calc(50% - 20px); /* Учитываем увеличенный отступ */
             box-sizing: border-box;
             position: relative;
         }
@@ -196,6 +198,7 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
+            text-align: center; /* Выравнивание текста по центру */
         }
 
         .social-links {
@@ -335,7 +338,7 @@
                 </a>
             </div>
 
-            <p>© 2025 Over Time Zvenigorod. Все права защищены.<a href="https://t.me/bkl_28" style="color: white; text-decoration: none;">Абоюдно.</a></p>
+            <p>© 2025 Over Time Zvenigorod. Все права защищены.<a href="https://t.me/voho_dranik" style="color: white; text-decoration: none;">Абоюдно.</a></p>
         </div>
     </footer>
 
