@@ -70,6 +70,27 @@
             background-position: center;
             background-repeat: no-repeat;
             margin-top: 60px;
+            position: relative; /* Для позиционирования заголовка */
+        }
+
+        /* Заголовок перед картинкой (только для десктопов) */
+        .hero h1 {
+            position: absolute;
+            top: 20px; /* Отступ сверху */
+            left: 50%; /* Центрирование по горизонтали */
+            transform: translateX(-50%); /* Точное центрирование */
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для текста */
+            display: none; /* По умолчанию скрыт */
+        }
+
+        /* Показываем заголовок только на десктопах */
+        @media (min-width: 769px) {
+            .hero h1 {
+                display: block; /* Показываем заголовок */
+            }
         }
 
         /* Основной контент */
@@ -263,6 +284,7 @@
     </header>
 
     <div class="hero">
+        <h1>OVER TIME ZWENIGOROD</h1> <!-- Новый заголовок -->
         <h1></h1>
     </div>
 
@@ -278,7 +300,7 @@
                     </div>
                     <div class="score">Не начался</div>
                     <div class="team-logo">
-                        <div class="team-name">RWE     </div>
+                        <div class="team-name">RWE</div>
                         <img src="img/RWE2.png" alt="RWE">
                     </div>
                 </div>
