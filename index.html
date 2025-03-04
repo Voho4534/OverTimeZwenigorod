@@ -244,6 +244,11 @@
             height: 24px;
         }
 
+        /* Стиль для скрытия слова "Абоюдно" */
+        .hidden {
+            display: none;
+        }
+
         /* Адаптация */
         @media (max-width: 768px) {
             header {
@@ -368,7 +373,7 @@
                 </a>
             </div>
 
-            <p>© 2025 Over Time Zvenigorod. Все права защищены. <a href="https://t.me/voho_dranik" style="color: white; text-decoration: none;">Абоюдно.</a></p>
+            <p>© 2025 Over Time Zvenigorod. Все права защищены. <a href="https://t.me/voho_dranik" style="color: white; text-decoration: none;" class="hidden">Абоюдно.</a></p>
         </div>
     </footer>
 
@@ -376,6 +381,17 @@
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Добавляем обработчик события для показа слова "Абоюдно"
+        const footerText = document.querySelector('footer p');
+        const hiddenLink = document.querySelector('footer .hidden');
+
+        footerText.addEventListener('click', () => {
+            hiddenLink.classList.remove('hidden'); // Показываем слово
+            setTimeout(() => {
+                hiddenLink.classList.add('hidden'); // Скрываем слово через 5 секунд
+            }, 5000);
         });
     </script>
 </body>
