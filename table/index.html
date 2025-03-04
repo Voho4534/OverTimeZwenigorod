@@ -93,6 +93,43 @@
             border-radius: 5px; /* Закругленные углы */
         }
 
+        /* Таблица */
+        .table-container {
+            overflow-x: auto; /* Горизонтальная прокрутка для таблицы */
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        th, td {
+            padding: 16px; /* Увеличенные отступы для высоты строк */
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        th {
+            background-color: #dd4710;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Логотипы команд */
+        .team-logo {
+            width: 30px; /* Размер логотипа */
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px; /* Отступ между логотипом и текстом */
+        }
+
         /* Футер */
         footer {
             background-color: #000;
@@ -168,6 +205,16 @@
                 font-size: 28px; /* Уменьшаем размер шрифта для мобильных */
                 padding: 10px 20px; /* Уменьшаем отступы */
             }
+
+            th, td {
+                padding: 12px; /* Уменьшаем отступы в таблице для мобильных */
+                font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
+            }
+
+            .team-logo {
+                width: 24px; /* Уменьшаем размер логотипа для мобильных */
+                height: 24px;
+            }
         }
     </style>
 </head>
@@ -184,7 +231,103 @@
 
     <div class="content">
         <h2>Соревнования</h2>
-        <!-- Здесь можно добавить контент, если потребуется -->
+
+        <!-- Таблица -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Место</th>
+                        <th>Команда</th>
+                        <th>И</th>
+                        <th>В</th>
+                        <th>П</th>
+                        <th>%</th>
+                        <th>Забито</th>
+                        <th>Пропущено</th>
+                        <th>+/-</th>
+                        <th>Очки</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <img src="/OverTimeZwenigorod/img/BULLDOGS2.png.png" alt="BULLDOGS2" class="team-logo">
+                            BULLDOGS
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <img src="/OverTimeZwenigorod/img/TEXAS NIGGAS2.png" alt="Texas Niggers" class="team-logo">
+                            TEXAS NIGGERS
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <img src="/OverTimeZwenigorod/img/RWE2.png" alt="RWE" class="team-logo">
+                            RWE
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <img src="/OverTimeZwenigorod/img/KITTY BOYS.png" alt="Kitty Boys" class="team-logo">
+                            KITTY BOYS
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <img src="/OverTimeZwenigorod/img/PPATROL2.png" alt="PPATROL" class="team-logo">
+                            PAW PATROL
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <footer>
