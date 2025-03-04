@@ -97,6 +97,8 @@
         .table-container {
             overflow-x: auto; /* Горизонтальная прокрутка для таблицы */
             margin-top: 20px;
+            width: 100%;
+            -webkit-overflow-scrolling: touch; /* Плавный скролл на мобильных устройствах */
         }
 
         table {
@@ -105,12 +107,18 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            min-width: 600px; /* Минимальная ширина таблицы */
         }
 
         th, td {
             padding: 16px; /* Увеличенные отступы для высоты строк */
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-right: 1px solid rgba(255, 255, 255, 0.2); /* Вертикальные линии */
+        }
+
+        th:last-child, td:last-child {
+            border-right: none; /* Убираем правую границу у последнего столбца */
         }
 
         th {
@@ -214,6 +222,15 @@
             .team-logo {
                 width: 24px; /* Уменьшаем размер логотипа для мобильных */
                 height: 24px;
+            }
+
+            .table-container {
+                overflow-x: auto; /* Горизонтальная прокрутка только для таблицы */
+                width: 100%;
+            }
+
+            table {
+                min-width: 600px; /* Минимальная ширина таблицы */
             }
         }
     </style>
