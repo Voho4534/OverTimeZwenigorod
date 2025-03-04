@@ -254,6 +254,15 @@
             header .logo {
                 position: static;
                 margin-bottom: 10px;
+                text-align: center; /* Центрируем логотип */
+            }
+
+            header nav {
+                display: flex;
+                flex-direction: row; /* Горизонтальное расположение кнопок */
+                justify-content: center; /* Центрируем кнопки по горизонтали */
+                gap: 10px; /* Уменьшаем отступ между кнопками */
+                flex-wrap: wrap; /* Если кнопок много, они переносятся на новую строку */
             }
 
             .hero {
@@ -285,7 +294,6 @@
 
     <div class="hero">
         <h1>OVER TIME ZWENIGOROD</h1> <!-- Новый заголовок -->
-        <h1></h1>
     </div>
 
     <div class="content">
