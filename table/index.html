@@ -147,6 +147,54 @@
             justify-content: center; /* Выравнивание по центру по горизонтали */
         }
 
+        /* Блок с матчами */
+        .match-results {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .match-result {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .team-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 20px;
+            flex: 1; /* Растягиваем блок, чтобы текст был по центру */
+            text-align: center; /* Выравнивание текста по центру */
+        }
+
+        .date {
+            font-size: 18px;
+            color: #ccc;
+            margin-top: 10px;
+            text-align: center;
+        }
+
         /* Футер */
         footer {
             background-color: #000;
@@ -257,6 +305,41 @@
 
     <div class="content">
         <h2>Соревнования</h2>
+
+        <!-- Блок результатов (События) -->
+        <div class="match-results">
+            <!-- Первый матч -->
+            <div class="match-result">
+                <div class="teams">
+                    <div class="team-logo">
+                        <div class="team-name">Paw Patrol</div>
+                        <img src="/OverTimeZwenigorod/img/PPATROL2.png" alt="Paw patrol">
+                    </div>
+                    <div class="score">Не начался</div>
+                    <div class="team-logo">
+                        <div class="team-name">RWE</div>
+                        <img src="/OverTimeZwenigorod/img/RWE2.png" alt="RWE">
+                    </div>
+                </div>
+                <div class="date">10 июня 16:00</div>
+            </div>
+
+            <!-- Второй матч -->
+            <div class="match-result">
+                <div class="teams">
+                    <div class="team-logo">
+                        <div class="team-name">Bulldogs</div>
+                        <img src="/OverTimeZwenigorod/img/BULLDOGS2.png" alt="BULLDOGS">
+                    </div>
+                    <div class="score">Не начался</div>
+                    <div class="team-logo">
+                        <div class="team-name">Kitty Boys</div>
+                        <img src="/OverTimeZwenigorod/img/KITTY BOYS.png" alt="KITTY BOYS">
+                    </div>
+                </div>
+                <div class="date">10 июня 18:00</div>
+            </div>
+        </div>
 
         <!-- Таблица -->
         <div class="table-container">
