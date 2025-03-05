@@ -100,30 +100,15 @@
             margin: 0 auto;
             flex: 1;
             box-sizing: border-box;
-            text-align: center; /* Выравнивание текста по центру */
+            text-align: left; /* Выравнивание текста по левому краю */
         }
 
         .content h2 {
-            font-size: 28px;
+            font-size: 24px;
             margin-bottom: 20px;
-            padding-top: 20px;
-            border-top: 1px solid black;
-            position: relative; /* Для позиционирования псевдоэлемента */
-            display: inline-block; /* Чтобы прямоугольник был по ширине текста */
-            padding: 10px 20px; /* Отступы для текста */
-        }
-
-        /* Прямоугольник за заголовком */
-        .content h2::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #dd4710; /* Цвет прямоугольника */
-            z-index: -1; /* Прямоугольник позади текста */
-            border-radius: 5px; /* Закругленные углы */
+            text-align: left; /* Выравнивание по левому краю */
+            padding: 10px 0; /* Отступы для текста */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Линия под заголовком */
         }
 
         /* Блок с матчами */
@@ -131,7 +116,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
         .match-result {
@@ -179,7 +164,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 40px; /* Увеличенный отступ между новостями */
-            margin-top: 40px;
+            margin-top: 20px;
             justify-content: center; /* Выравнивание новостей по центру */
         }
 
@@ -201,6 +186,20 @@
             object-fit: cover;
             margin-top: -40px;
             margin-bottom: 20px;
+        }
+
+        /* Стиль для ссылки "Читать далее" */
+        .read-more {
+            color: #dd4710;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+            display: inline-block; /* Чтобы ссылка была в строку */
+            margin-top: 10px; /* Отступ сверху */
+        }
+
+        .read-more:hover {
+            color: #ff6b3b;
         }
 
         /* Футер */
@@ -302,6 +301,7 @@
     </div>
 
     <div class="content">
+        <!-- Заголовок "События" -->
         <h2>События</h2>
         <div class="match-results">
             <!-- Первый матч -->
@@ -337,24 +337,25 @@
             </div>
         </div>
 
+        <!-- Заголовок "Новости" -->
         <h2>Новости</h2>
         <div class="news">
             <div class="news-item">
                 <img src="img/NEWS2.png" alt="Новость 1">
                 <div class="text">
-                    <h3>Громкие трейды в OVER TIME ZWENIGOROD: RWE, KITTY BOYS и TEXAS NIGGERS обменялись игроками!</h3>
+                    <h3>Громкие трейды в OVER TIME ZWENIGOROD: BULLDOGS, RWE, KITTY BOYS и Paw Patrol обменялись игроками!</h3>
                     <p>В OVER TIME ZWENIGOROD состоялся громкий обмен.</p>
-                    <a href="/OverTimeZwenigorod/news" style="color: #007BFF; font-weight: bold;">Читать далее</a>
+                    <a href="/OverTimeZwenigorod/news" class="read-more">Читать далее</a>
                 </div>
             </div>
-            <!--<div class="news-item">
+            <div class="news-item">
                 <img src="img/news12.png" alt="Новость 2">
                 <div class="text">
                     <h3>Новые правила лиги!</h3>
                     <p>Администрация OVER TIME ZWENIGOROD представила обновленные правила лиги.</p>
-                    <a href="/OverTimeZwenigorod/news" style="color: #007BFF; font-weight: bold;">Читать далее</a>
+                    <a href="/OverTimeZwenigorod/news" class="read-more">Читать далее</a>
                 </div>
-            </div>-->
+            </div>
         </div>
     </div>
 
