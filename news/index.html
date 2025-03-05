@@ -54,7 +54,7 @@
         header nav a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 18px !important; /* Добавлено !important */
             transition: color 0.3s ease;
             white-space: nowrap; /* Запрет переноса текста */
         }
@@ -222,11 +222,6 @@
             header nav {
                 gap: 8px; /* Уменьшение отступов между пунктами меню */
             }
-
-            /* Убрано уменьшение размера шрифта для мобильных */
-            /* header nav a {
-                font-size: 14px;
-            } */
 
             .content {
                 padding-top: 100px;
