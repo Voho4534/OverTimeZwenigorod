@@ -95,58 +95,6 @@
             border-radius: 5px; /* Закругленные углы */
         }
 
-        /* Таблица */
-        .table-container {
-            overflow-x: auto; /* Горизонтальная прокрутка для таблицы */
-            margin-top: 20px;
-            width: 100%;
-            -webkit-overflow-scrolling: touch; /* Плавный скролл на мобильных устройствах */
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            min-width: 600px; /* Минимальная ширина таблицы */
-        }
-
-        th, td {
-            padding: 16px; /* Увеличенные отступы для высоты строк */
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            border-right: 1px solid rgba(255, 255, 255, 0.2); /* Вертикальные линии */
-        }
-
-        th:last-child, td:last-child {
-            border-right: none; /* Убираем правую границу у последнего столбца */
-        }
-
-        th {
-            background-color: #dd4710;
-            font-weight: bold;
-        }
-
-        tr:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        /* Логотипы команд */
-        .team-logo {
-            width: 30px; /* Размер логотипа */
-            height: 30px;
-            vertical-align: middle;
-            margin-right: 10px; /* Отступ между логотипом и текстом */
-        }
-
-        /* Выравнивание логотипа и текста по горизонтали */
-        .team-cell {
-            display: flex;
-            align-items: center; /* Выравнивание по центру по вертикали */
-            justify-content: center; /* Выравнивание по центру по горизонтали */
-        }
-
         /* Блок с матчами */
         .match-results {
             display: flex;
@@ -160,6 +108,8 @@
             padding: 20px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%; /* Занимает всю ширину */
+            box-sizing: border-box; /* Учитываем padding в ширине */
         }
 
         .teams {
@@ -173,6 +123,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px; /* Отступ между логотипом и текстом */
         }
 
         .team-logo img {
@@ -193,6 +144,70 @@
             color: #ccc;
             margin-top: 10px;
             text-align: center;
+        }
+
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            header .logo {
+                position: static;
+                margin-bottom: 10px;
+                text-align: center; /* Центрируем логотип */
+            }
+
+            header nav {
+                display: flex;
+                flex-direction: row; /* Горизонтальное расположение кнопок */
+                justify-content: center; /* Центрируем кнопки по горизонтали */
+                gap: 10px; /* Уменьшаем отступ между кнопками */
+                flex-wrap: wrap; /* Если кнопок много, они переносятся на новую строку */
+            }
+
+            .content {
+                margin-top: 80px; /* Уменьшаем отступ для мобильных устройств */
+            }
+
+            .content h2 {
+                font-size: 28px; /* Уменьшаем размер шрифта для мобильных */
+                padding: 10px 20px; /* Уменьшаем отступы */
+            }
+
+            .match-result {
+                padding: 15px; /* Уменьшаем отступы внутри блока */
+            }
+
+            .teams {
+                flex-direction: column; /* Располагаем команды вертикально */
+                gap: 10px; /* Уменьшаем отступ между командами */
+            }
+
+            .team-logo {
+                flex-direction: row; /* Логотип и название команды в одну строку */
+                align-items: center; /* Выравниваем по центру */
+                gap: 10px; /* Отступ между логотипом и текстом */
+            }
+
+            .team-logo img {
+                width: 40px; /* Уменьшаем размер логотипа */
+                height: 40px;
+            }
+
+            .team-name {
+                font-size: 16px; /* Уменьшаем размер текста */
+            }
+
+            .score {
+                font-size: 20px; /* Уменьшаем размер текста счета */
+                margin: 10px 0; /* Отступы сверху и снизу */
+            }
+
+            .date {
+                font-size: 16px; /* Уменьшаем размер текста даты */
+            }
         }
 
         /* Футер */
@@ -235,61 +250,6 @@
             width: 24px;
             height: 24px;
         }
-
-        /* Стиль для скрытия слова "Абоюдно" */
-        .hidden {
-            display: none;
-        }
-
-        /* Адаптация для мобильных устройств */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 10px;
-            }
-
-            header .logo {
-                position: static;
-                margin-bottom: 10px;
-                text-align: center; /* Центрируем логотип */
-            }
-
-            header nav {
-                display: flex;
-                flex-direction: row; /* Горизонтальное расположение кнопок */
-                justify-content: center; /* Центрируем кнопки по горизонтали */
-                gap: 10px; /* Уменьшаем отступ между кнопками */
-                flex-wrap: wrap; /* Если кнопок много, они переносятся на новую строку */
-            }
-
-            .content {
-                margin-top: 80px; /* Уменьшаем отступ для мобильных устройств */
-            }
-
-            .content h2 {
-                font-size: 28px; /* Уменьшаем размер шрифта для мобильных */
-                padding: 10px 20px; /* Уменьшаем отступы */
-            }
-
-            th, td {
-                padding: 12px; /* Уменьшаем отступы в таблице для мобильных */
-                font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
-            }
-
-            .team-logo {
-                width: 24px; /* Уменьшаем размер логотипа для мобильных */
-                height: 24px;
-            }
-
-            .table-container {
-                overflow-x: auto; /* Горизонтальная прокрутка только для таблицы */
-                width: 100%;
-            }
-
-            table {
-                min-width: 600px; /* Минимальная ширина таблицы */
-            }
-        }
     </style>
 </head>
 <body>
@@ -312,13 +272,13 @@
             <div class="match-result">
                 <div class="teams">
                     <div class="team-logo">
-                        <div class="team-name">Paw Patrol</div>
                         <img src="/OverTimeZwenigorod/img/PPATROL2.png" alt="Paw patrol">
+                        <div class="team-name">Paw Patrol</div>
                     </div>
                     <div class="score">Не начался</div>
                     <div class="team-logo">
-                        <div class="team-name">RWE</div>
                         <img src="/OverTimeZwenigorod/img/RWE2.png" alt="RWE">
+                        <div class="team-name">RWE</div>
                     </div>
                 </div>
                 <div class="date">10 июня 16:00</div>
@@ -328,114 +288,17 @@
             <div class="match-result">
                 <div class="teams">
                     <div class="team-logo">
-                        <div class="team-name">Bulldogs</div>
                         <img src="/OverTimeZwenigorod/img/BULLDOGS2.png" alt="BULLDOGS">
+                        <div class="team-name">Bulldogs</div>
                     </div>
                     <div class="score">Не начался</div>
                     <div class="team-logo">
-                        <div class="team-name">Kitty Boys</div>
                         <img src="/OverTimeZwenigorod/img/KITTY BOYS.png" alt="KITTY BOYS">
+                        <div class="team-name">Kitty Boys</div>
                     </div>
                 </div>
                 <div class="date">10 июня 18:00</div>
             </div>
-        </div>
-
-        <!-- Таблица -->
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Место</th>
-                        <th>Команда</th>
-                        <th>И</th>
-                        <th>В</th>
-                        <th>П</th>
-                        <th>%</th>
-                        <th>Забито</th>
-                        <th>Пропущено</th>
-                        <th>+/-</th>
-                        <th>Очки</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td class="team-cell">
-                            <img src="/OverTimeZwenigorod/img/BULLDOGS2.png" alt="BULLDOGS2" class="team-logo">
-                            BULLDOGS
-                        </td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td class="team-cell">
-                            <img src="/OverTimeZwenigorod/img/TEXAS NIGGAS2.png" alt="Texas Niggers" class="team-logo">
-                            TEXAS NIGGERS
-                        </td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td class="team-cell">
-                            <img src="/OverTimeZwenigorod/img/RWE2.png" alt="RWE" class="team-logo">
-                            RWE
-                        </td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td class="team-cell">
-                            <img src="/OverTimeZwenigorod/img/KITTY BOYS.png" alt="Kitty Boys" class="team-logo">
-                            KITTY BOYS
-                        </td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td class="team-cell">
-                            <img src="/OverTimeZwenigorod/img/PPATROL2.png" alt="PPATROL" class="team-logo">
-                            PAW PATROL
-                        </td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
 
@@ -462,17 +325,6 @@
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // Добавляем обработчик события для показа слова "Абоюдно"
-        const footerText = document.querySelector('footer p');
-        const hiddenLink = document.querySelector('footer .hidden');
-
-        footerText.addEventListener('click', () => {
-            hiddenLink.classList.remove('hidden'); // Показываем слово
-            setTimeout(() => {
-                hiddenLink.classList.add('hidden'); // Скрываем слово через 5 секунд
-            }, 5000);
         });
     </script>
 </body>
