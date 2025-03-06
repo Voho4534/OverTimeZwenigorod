@@ -70,26 +70,26 @@
             background-position: center;
             background-repeat: no-repeat;
             margin-top: 60px;
-            position: relative; /* Для позиционирования заголовка */
+            position: relative;
         }
 
         /* Заголовок перед картинкой (только для десктопов) */
         .hero h1 {
             position: absolute;
-            top: 150px; /* Увеличиваем отступ сверху */
-            left: 50%; /* Центрирование по горизонтали */
-            transform: translateX(-50%); /* Точное центрирование */
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 48px;
             font-weight: bold;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для текста */
-            display: none; /* По умолчанию скрыт */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            display: none;
         }
 
         /* Показываем заголовок только на десктопах */
         @media (min-width: 769px) {
             .hero h1 {
-                display: block; /* Показываем заголовок */
+                display: block;
             }
         }
 
@@ -100,15 +100,15 @@
             margin: 0 auto;
             flex: 1;
             box-sizing: border-box;
-            text-align: left; /* Выравнивание текста по левому краю */
+            text-align: left;
         }
 
         .content h2 {
             font-size: 24px;
             margin-bottom: 20px;
-            text-align: left; /* Выравнивание по левому краю */
-            padding: 10px 0; /* Отступы для текста */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Линия под заголовком */
+            text-align: left;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* Блок с матчами */
@@ -148,8 +148,8 @@
             font-size: 24px;
             font-weight: bold;
             margin: 0 20px;
-            flex: 1; /* Растягиваем блок, чтобы текст был по центру */
-            text-align: center; /* Выравнивание текста по центру */
+            flex: 1;
+            text-align: center;
         }
 
         .date {
@@ -163,9 +163,9 @@
         .news {
             display: flex;
             flex-wrap: wrap;
-            gap: 40px; /* Увеличенный отступ между новостями */
-            margin-top: 20px;
-            justify-content: center; /* Выравнивание новостей по центру */
+            gap: 40px;
+            margin-top: 60px; /* Увеличенный отступ сверху */
+            justify-content: center;
         }
 
         .news-item {
@@ -173,7 +173,7 @@
             padding: 20px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            width: calc(50% - 20px); /* Учитываем увеличенный отступ */
+            width: calc(50% - 20px);
             box-sizing: border-box;
             position: relative;
         }
@@ -194,8 +194,8 @@
             text-decoration: none;
             font-size: 18px;
             transition: color 0.3s ease;
-            display: inline-block; /* Чтобы ссылка была в строку */
-            margin-top: 10px; /* Отступ сверху */
+            display: inline-block;
+            margin-top: 10px;
         }
 
         .read-more:hover {
@@ -218,13 +218,13 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            text-align: center; /* Выравнивание текста по центру */
+            text-align: center;
         }
 
         .social-links {
             display: flex;
             gap: 20px;
-            align-items: center; /* Выравнивание иконок по центру */
+            align-items: center;
         }
 
         .social-links a {
@@ -234,8 +234,8 @@
         }
 
         .social-links a:hover {
-            transform: scale(1.1); /* Увеличение при наведении */
-            opacity: 0.8; /* Легкое затемнение */
+            transform: scale(1.1);
+            opacity: 0.8;
         }
 
         .social-links img {
@@ -258,15 +258,15 @@
             header .logo {
                 position: static;
                 margin-bottom: 10px;
-                text-align: center; /* Центрируем логотип */
+                text-align: center;
             }
 
             header nav {
                 display: flex;
-                flex-direction: row; /* Горизонтальное расположение кнопок */
-                justify-content: center; /* Центрируем кнопки по горизонтали */
-                gap: 10px; /* Уменьшаем отступ между кнопками */
-                flex-wrap: wrap; /* Если кнопок много, они переносятся на новую строку */
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
             }
 
             .hero {
@@ -297,7 +297,7 @@
     </header>
 
     <div class="hero">
-        <h1>OVER TIME ZWENIGOROD</h1> <!-- Новый заголовок -->
+        <h1>OVER TIME ZWENIGOROD</h1>
     </div>
 
     <div class="content">
@@ -348,14 +348,6 @@
                     <a href="/OverTimeZwenigorod/news" class="read-more">Читать далее</a>
                 </div>
             </div>
-            <!--<div class="news-item">
-                <img src="img/news12.png" alt="Новость 2">
-                <div class="text">
-                    <h3>Новые правила лиги!</h3>
-                    <p>Администрация OVER TIME ZWENIGOROD представила обновленные правила лиги.</p>
-                    <a href="/OverTimeZwenigorod/news" class="read-more">Читать далее</a>
-                </div>
-            </div>-->
         </div>
     </div>
 
@@ -369,7 +361,6 @@
                     </svg>
                 </a>
                 <a href="https://voho4534.github.io/OverTimeZwenigorod/" target="_blank">
-                    <!-- Замените src на путь к вашему изображению -->
                     <img src="/OverTimeZwenigorod/img/OTZ3.png" alt="Логотип сайта">
                 </a>
             </div>
@@ -379,12 +370,13 @@
     </footer>
 
     <script>
+        // Скрипт для изменения фона шапки при скролле
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Добавляем обработчик события для показа слова "Абоюдно"
+        // Скрипт для показа слова "Абоюдно" при клике на текст в футере
         const footerText = document.querySelector('footer p');
         const hiddenLink = document.querySelector('footer .hidden');
 
